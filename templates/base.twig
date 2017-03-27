@@ -10,11 +10,12 @@
 		<header class="header" >
 			{% block header %}
 				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
+					<a class="hdr-logo-link" href="{{site.url}}" rel="home">
+						<img src="{{theme.path}}/static/img/jba-logo-wht.svg" alt="">
+					</a>
 					<nav id="nav-main" class="nav-main" role="navigation">
 						{% include "menu.twig" with {'menu': menu.get_items} %}
+						{% include 'social-links.twig' %}
 					</nav><!-- #nav -->
 				</div>
 			{% endblock %}

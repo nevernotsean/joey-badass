@@ -4,11 +4,11 @@ if ( ! class_exists( 'Timber' ) ) {
 	add_action( 'admin_notices', function() {
 		echo '<div class="error"><p>Timber not activated. Make sure you activate the plugin in <a href="' . esc_url( admin_url( 'plugins.php#timber' ) ) . '">' . esc_url( admin_url( 'plugins.php') ) . '</a></p></div>';
 	});
-	
+
 	add_filter('template_include', function($template) {
 		return get_stylesheet_directory() . '/static/no-timber.html';
 	});
-	
+
 	return;
 }
 
@@ -25,7 +25,23 @@ class StarterSite extends TimberSite {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'loadScripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'loadStyles' ) );
 		parent::__construct();
+	}
+
+	function loadScripts() {
+		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/static/js/vendor/jquery.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/static/js/vendor/foundation.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'whatinput', get_template_directory_uri() . '/static/js/vendor/what-input.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'app', get_template_directory_uri() . '/static/js/app.js', array(), '1.0.0', true );
+	}
+
+	function loadStyles() {
+		// Add main stylesheet
+		wp_enqueue_style( 'foundation', get_template_directory_uri() . '/static/css/foundation.css');
+		wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/static/css/font-awesome.min.css');
+		wp_enqueue_style( 'site', get_template_directory_uri() . '/static/css/app.css');
 	}
 
 	function register_post_types() {
