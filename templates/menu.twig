@@ -1,5 +1,8 @@
 {% if menu %}
 	<ul class="menu-links">
+		<li class="menu-item"><a href="{{site.url}}/news">News</a></li>
+		<li class="menu-item"><a href="{{site.url}}/music">Music</a></li>
+		<li class="menu-item"><a href="{{site.url}}/video">Videos</a></li>
 	{% for item in menu %}
 		<li class="{{item.classes | join(' ')}}">
 			<a href="{{item.get_link}}">{{item.title}}</a>

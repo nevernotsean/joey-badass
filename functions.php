@@ -34,6 +34,7 @@ class StarterSite extends TimberSite {
 		wp_enqueue_script( 'jquery', get_template_directory_uri() . '/static/js/vendor/jquery.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/static/js/vendor/foundation.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'whatinput', get_template_directory_uri() . '/static/js/vendor/what-input.js', array(), '1.0.0', true );
+		wp_enqueue_script( 'slick', get_template_directory_uri() . '/static/slick/slick.js', array(), '1.0.0', true );
 		wp_enqueue_script( 'app', get_template_directory_uri() . '/static/js/app.js', array(), '1.0.0', true );
 	}
 
@@ -41,6 +42,8 @@ class StarterSite extends TimberSite {
 		// Add main stylesheet
 		wp_enqueue_style( 'foundation', get_template_directory_uri() . '/static/css/foundation.css');
 		wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/static/css/font-awesome.min.css');
+		wp_enqueue_style( 'slick', get_template_directory_uri() . '/static/slick/slick.css');
+		wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/static/slick/slick-theme.css');
 		wp_enqueue_style( 'site', get_template_directory_uri() . '/static/css/app.css');
 	}
 
