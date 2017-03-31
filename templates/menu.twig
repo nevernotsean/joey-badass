@@ -4,10 +4,13 @@
 		<li class="menu-item"><a href="{{site.url}}/music">Music</a></li>
 		<li class="menu-item"><a href="{{site.url}}/video">Videos</a></li>
 	{% for item in menu %}
-		<li class="{{item.classes | join(' ')}}">
+		<li class="{{item.classes | join(' ')}} {% if item.current %}active{% endif %}">
 			<a href="{{item.get_link}}">{{item.title}}</a>
 			{% include "menu.twig" with {'menu': item.get_children} %}
 		</li>
 	{% endfor %}
+		<li class="text-right">
+			<a href="" class="def-link"><img width="100" height="auto" src="{{theme.path}}/static/img/perecords.svg" alt=""></a>
+		</li>
 	</ul>
 {% endif %}

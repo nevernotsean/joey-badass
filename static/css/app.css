@@ -48,9 +48,10 @@
         position: relative;
     }
 
-    header .menu-links a:before, .content-wrapper a:before {
+    /*header .menu-links a:before, */
+    .content-wrapper a:before {
         content: '';
-        height: 1px;
+        height: 2px;
         background: #fff;
         width: 100%;
         width: calc(100% - 0.25em);
@@ -71,7 +72,7 @@
 
     header .menu-links a:after, .content-wrapper a:after {
         content: '';
-        height: 1px;
+        height: 2px;
         background: #fff;
         width: 0;
         transition: width 100ms ease;
@@ -126,7 +127,7 @@
     }
 
     header .wrapper {
-        border-bottom: 1px solid #fff;
+        /*border-bottom: 1px solid #fff;*/
         height: 135px;
     }
 
@@ -152,9 +153,9 @@
         float: left;
     }
 
-    #nav-main ul.social {
+    /*#nav-main ul.social {
         float: right;
-    }
+    }*/
 
     #nav-main>ul {
         display: block;
@@ -187,7 +188,7 @@
     #nav-main ul.menu-links {
         display: flex;
         align-content: stretch;
-        width: calc(100% - 28.75rem);
+        width: calc(100% - 240px);
     }
 
     #nav-main ul.menu-links li.menu-item {
@@ -218,13 +219,65 @@
         height: 60vh;
     }
 
+    .hero ul.social {
+      position: absolute;
+      bottom: 25px;
+      left: 30px;
+    }
+    .hero ul.social li a:before {
+      content: none;
+    }
+    .hero .video-ui {
+      position: absolute;
+      bottom: 25px;
+      right: 30px;
+    }
+
+    .hero .video-ui > a {
+      margin-right: 10px;
+    }
+
+    .hero h1 {
+      margin: 180px 0;
+    }
+
+    .hero h6 {
+      text-transform: lowercase;
+      font-size: 14px;
+    }
+
+    .hero .hero-bg {
+      overflow: hidden;
+    }
+
+    .hero .hero-bg video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .hero .slider .slide {
+      min-height: 450px;
+      position: relative;
+    }
+    .hero .slider .slide img {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      transform: translateY(-50%);
+      top: 50%;
+      left: 0;
+    }
+
     .bg {
         background: url() no-repeat center center;
         background-size: cover;
     }
 
     img.album-rotate {
-        transform: rotate(-10deg);
+        /*transform: rotate(-10deg);*/
         max-width: 600px;
         margin-bottom: 80px;
         box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5);
@@ -239,6 +292,15 @@
     .amerikan-bg {
         overflow: hidden;
         position: relative;
+    }
+
+    .tour-bg.bg {
+      position: relative;
+      background-color: #121212;
+      background-image: url(../img/album-tour-blend-bg.png), url(../img/tourbg.jpg);
+      background-position: center top, center bottom;
+      padding-bottom: 30%;
+      background-size: contain;
     }
 
     #wavyCanvas {
@@ -364,7 +426,12 @@
       height: 100%;
       min-height: 100%;
       width: auto;
+      max-width: none;
       position: absolute;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
     }
 
     .article-item .article-h1 {

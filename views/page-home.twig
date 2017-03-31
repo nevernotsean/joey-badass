@@ -1,98 +1,119 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div id="console" style="position: fixed; top: 0; right: 0; padding: 3px; background:#000; color: #fff; z-index: 99;"></div>
+	<!-- <div id="console" style="position: fixed; top: 0; right: 0; padding: 3px; background:#000; color: #fff; z-index: 99;"></div> -->
 	<div class="hero">
-		<div class="bg hero-bg" style="background-image: url({{ theme.path }}/static/img/hero-ph.jpg);" rel="fullscreen"></div>
+		<div class="bg hero-bg" rel="fullscreen">
+			<video class="bolero-gifv bolero-gifv-processed playing" playsinline="" autoplay="" loop="" width="600" height="337.5" preload="metadata">
+				<source type="video/mp4" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="//bg.cdn.ustudio.com/app/transcodes/TQAdh6DJdtuY.mp4">
+				<source type="video/webm" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="//bg.cdn.ustudio.com/app/transcodes/TuX1xml2yZsS.webm">
+				<source type="video/mp4" data-src="//bg.cdn.ustudio.com/app/transcodes/TrjIRpNdsK1V.mp4" src="//bg.cdn.ustudio.com/app/transcodes/TrjIRpNdsK1V.mp4">
+				<source type="video/webm" data-src="//bg.cdn.ustudio.com/app/transcodes/TSg23xf061MF.webm" src="//bg.cdn.ustudio.com/app/transcodes/TSg23xf061MF.webm">
+			</video>
+		</div>
 		<div class="hero-content">
+			<h6 class="top">out now</h6>
 			<h1>All Ameri<span class="strikethrough">kkk</span>an Bada$$</h1>
-			<a href="#">Listen Now</a>
+			<a href="#">Download/Stream All-Amerikkkan Bada$$</a>
+		</div>
+		<div class="lower">
+			{% include 'social-links.twig' %}
+			<div class="video-ui">
+				<a href="#">Watch Full Video</a>
+				<i class="fa fa-volume-up"></i>
+			</div>
 		</div>
 	</div>
 	<div class="content-wrapper amerikan-bg">
 		<canvas id="wavyCanvas"></canvas>
 		<img id="flagsrc" data-src="{{theme.path}}/static/img/american-bg-sm.jpg" alt="">
 		<div class="inner-wrapper">
-			<div class="row">
-				<div class="small-12 column text-center">
-					<img class="album-rotate" src="{{theme.path}}/static/img/albumart.jpg" alt="">
-					<h2>Listen to the album</h2>
-					<ul class="menu simple">
-						<li><a href="#">Soundcloud</a></li>
-						<li><a href="#">Amazon</a></li>
-						<li><a href="#">iTunes</a></li>
-						<li><a href="#">Google Play</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-12 medium-8 large-6 small-centered column text-center">
-					<div class="row small-up-1 medium-up-2 image-grid">
-						<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
-						<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
-						<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
-						<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
+			<div class="album-bg bg" style="background-image: url({{theme.path}}/static/img/album-bg-a.jpg);">
+				<div class="row">
+					<div class="small-12 column text-center">
+						<img class="album-rotate" src="{{theme.path}}/static/img/albumart.jpg" alt="">
+						<h2>Listen to the album</h2>
+						<ul class="menu simple">
+							<li><a href="#">Soundcloud</a></li>
+							<li><a href="#">Amazon</a></li>
+							<li><a href="#">iTunes</a></li>
+							<li><a href="#">Google Play</a></li>
+						</ul>
 					</div>
-					<a href="/music">View More Music</a>
 				</div>
-			</div>
-			<div class="row">
-				<div class="small-12 medium-12 large-8 small-centered column text-center">
-					<h2>JOEY BADA$$ TOUR</h2>
-					<table class="tourdates">
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-					</table>
-					<div class="red more-dates">
-						<span>* more tour dates </span>
-						<div>to be annouced soon!</div>
+				<div class="row">
+					<div class="small-12 medium-8 large-6 small-centered column text-center">
+						<div class="row small-up-1 medium-up-2 image-grid">
+							<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
+							<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
+							<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
+							<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
+						</div>
+						<a href="/music">View More Music</a>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="small-12 column text-center">
-					<div class="full-height">
-						<a href="#">View the merch</a>
+			<div class="tour-bg bg">
+				<div class="row">
+					<div class="small-12 medium-12 large-8 small-centered column text-center">
+						<h2>JOEY BADA$$ TOUR</h2>
+						<table class="tourdates">
+							<tr>
+								<td>DATE, XX, 2017</td>
+								<td><span>Venue</span></td>
+								<td>Location, ST</td>
+								<td><a href="#">Buy Tickets</a></td>
+							</tr>
+							<tr>
+								<td>DATE, XX, 2017</td>
+								<td><span>Venue</span></td>
+								<td>Location, ST</td>
+								<td><a href="#">Buy Tickets</a></td>
+							</tr>
+							<tr>
+								<td>DATE, XX, 2017</td>
+								<td><span>Venue</span></td>
+								<td>Location, ST</td>
+								<td><a href="#">Buy Tickets</a></td>
+							</tr>
+							<tr>
+								<td>DATE, XX, 2017</td>
+								<td><span>Venue</span></td>
+								<td>Location, ST</td>
+								<td><a href="#">Buy Tickets</a></td>
+							</tr>
+							<tr>
+								<td>DATE, XX, 2017</td>
+								<td><span>Venue</span></td>
+								<td>Location, ST</td>
+								<td><a href="#">Buy Tickets</a></td>
+							</tr>
+							<tr>
+								<td>DATE, XX, 2017</td>
+								<td><span>Venue</span></td>
+								<td>Location, ST</td>
+								<td><a href="#">Buy Tickets</a></td>
+							</tr>
+							<tr>
+								<td>DATE, XX, 2017</td>
+								<td><span>Venue</span></td>
+								<td>Location, ST</td>
+								<td><a href="#">Buy Tickets</a></td>
+							</tr>
+						</table>
+						<div class="red more-dates">
+							<span>* more tour dates </span>
+							<div>to be annouced soon!</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="merch-bg bg" style="background-image: url({{theme.path}}/static/img/merch-bg.jpg)">
+				<div class="row">
+					<div class="small-12 column text-center">
+						<div class="full-height">
+							<a href="#">View the merch</a>
+						</div>
 					</div>
 				</div>
 			</div>
