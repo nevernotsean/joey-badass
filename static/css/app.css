@@ -215,6 +215,10 @@
         width: 100%;
     }
 
+    .mute i {
+      min-width: 16px;
+    }
+
     .inner-wrapper>.row {
         margin-bottom: 80px;
     }
@@ -260,6 +264,12 @@
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
+      transition: all 20s linear;
+    }
+
+    .hero .hero-bg video.grow {
+      -webkit-transform: translate(-50%, -50%) scale(1.15);
+      transform: translate(-50%, -50%) scale(1.15);
     }
 
     .hero .slider .slide {

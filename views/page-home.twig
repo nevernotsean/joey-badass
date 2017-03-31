@@ -4,10 +4,11 @@
 	<!-- <div id="console" style="position: fixed; top: 0; right: 0; padding: 3px; background:#000; color: #fff; z-index: 99;"></div> -->
 	<div class="hero">
 		<div class="bg hero-bg" rel="fullscreen">
-			<video class="bolero-gifv bolero-gifv-processed playing" playsinline="" autoplay="" loop="" width="600" height="337.5" preload="metadata">
-				<source type="video/mp4" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="https://player.vimeo.com/external/210993622.hd.mp4?s=fe9c94a35a94d82306b3d9ec35b3d779955bb0b0&profile_id=174">
+			<video playsinline="" autoplay="" loop="" width="600" height="337.5" preload="metadata">
+				<source type="video/mp4" src="{{theme.path}}/static/jba-teaser.mp4">
+				<!-- <source type="video/mp4" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="https://player.vimeo.com/external/210993622.hd.mp4?s=fe9c94a35a94d82306b3d9ec35b3d779955bb0b0&profile_id=174"> -->
 <!-- 				<source type="video/webm" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="//bg.cdn.ustudio.com/app/transcodes/TuX1xml2yZsS.webm"> -->
-				<source type="video/mp4" data-src="//bg.cdn.ustudio.com/app/transcodes/TrjIRpNdsK1V.mp4" src="https://player.vimeo.com/external/210993622.hd.mp4?s=fe9c94a35a94d82306b3d9ec35b3d779955bb0b0&profile_id=174">
+				<!-- <source type="video/mp4" data-src="//bg.cdn.ustudio.com/app/transcodes/TrjIRpNdsK1V.mp4" src="https://player.vimeo.com/external/210993622.hd.mp4?s=fe9c94a35a94d82306b3d9ec35b3d779955bb0b0&profile_id=174"> -->
 <!-- 				<source type="video/webm" data-src="//bg.cdn.ustudio.com/app/transcodes/TSg23xf061MF.webm" src="//bg.cdn.ustudio.com/app/transcodes/TSg23xf061MF.webm"> -->
 			</video>
 		</div>
@@ -20,7 +21,7 @@
 			{% include 'social-links.twig' %}
 			<div class="video-ui">
 				<a href="#">Watch Full Video</a>
-				<i class="fa fa-volume-up"></i>
+				<a href="#" class="mute def-link"><i class="fa fa-volume-up"></i></a>
 			</div>
 		</div>
 	</div>
