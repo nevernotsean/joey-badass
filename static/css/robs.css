@@ -1,0 +1,56 @@
+h1.article-h1 {
+    font-size: 32px;
+    margin: 0 15%;
+}
+
+.bg.hero-bg {
+    opacity: .5;
+}
+
+h2.slide-title {
+    font-size: 32px;
+}
+
+h1.archive-title.text-center {
+    font-size: 32px;
+}
+
+img.article-thumbnail {
+    opacity: 0.8;
+}
+
+
+/* above the fold landing */
+
+.hero h1 {
+    font-size: 41px;
+    letter-spacing: 10px;
+}
+
+.hdr-logo-link img {
+    padding: 30px;
+    height: 120px;
+    width: auto;
+}
+
+.hero h6 {
+    margin-bottom: -50px;
+}
+
+
+.content-wrapper a {
+    font-size:14px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #fff;
+}
+
+.content-wrapper a:before {
+    top: calc(100% + -0.6em);
+}
+
+.hero ul.social {
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+}
