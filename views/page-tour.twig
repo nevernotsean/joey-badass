@@ -17,48 +17,19 @@
 				<div class="small-12 medium-12 large-8 small-centered column text-center">
 					<h2>JOEY BADA$$ TOUR</h2>
 					<table class="tourdates">
+						{% for row in post.get_field('tour_row') %}
 						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
+							<td>{{row.date}}</td>
+							<td><span>{{row.venue}}</span></td>
+							<td>{{row.city_state}}</td>
+							{% if row.disable %}
+								<td><a href="#" class="disable">Buy Tickets</a></td>
+							{% else %}
+								<td><a href="{{row.buy_url}}">Buy Tickets</a></td>
+							{% endif %}
+
 						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
-						<tr>
-							<td>DATE, XX, 2017</td>
-							<td><span>Venue</span></td>
-							<td>Location, ST</td>
-							<td><a href="#">Buy Tickets</a></td>
-						</tr>
+						{% endfor %}
 					</table>
 					<div class="red more-dates">
 						<span>* more tour dates </span>

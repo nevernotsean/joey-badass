@@ -26,6 +26,27 @@ jQuery( document ).ready( function( $ ) {
     arrows: true,
     dots: true
   })
+
+  $('.hero video').addClass('grow');
+
+  // mute button
+  var video = $('video')[0];
+  var $muteButton = $('.mute');
+  var $icon = $muteButton.find('i.fa');
+
+  $muteButton.on('click', function(e){
+    e.preventDefault()
+
+    var isMuted = video.muted
+
+    if ( isMuted === false ){
+      video.muted = true
+      $icon.removeClass('fa-volume-up').addClass('fa-volume-off')
+    } else {
+      video.muted = false
+      $icon.removeClass('fa-volume-off').addClass('fa-volume-up')
+    }
+  })
 });
 
 
