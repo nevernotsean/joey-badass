@@ -2,7 +2,7 @@
   <section class="article-content">
     <a href="{{post.link}}" class="article-link def-link"></a>
     <div class="image-pixelate">
-      <img src="{{post.thumbnail.src | letterbox(800, 400, '#111') }}" alt="" class="article-thumbnail">
+      <img src="{{post.thumbnail.src | resize(800, 400) }}" alt="" class="article-thumbnail">
     </div>
     <h2 class="article-h1">{{post.title}}</h2>
   </section>
