@@ -1,3 +1,18 @@
+// function debounce(func, wait, immediate) {
+// 	var timeout;
+// 	return function() {
+// 		var context = this, args = arguments;
+// 		var later = function() {
+// 			timeout = null;
+// 			if (!immediate) func.apply(context, args);
+// 		};
+// 		var callNow = immediate && !timeout;
+// 		clearTimeout(timeout);
+// 		timeout = setTimeout(later, wait);
+// 		if (callNow) func.apply(context, args);
+// 	};
+// };
+
 jQuery( document ).ready( function( $ ) {
   var wh = document.documentElement.clientHeight
   var ww = document.documentElement.clientWidth
@@ -47,6 +62,32 @@ jQuery( document ).ready( function( $ ) {
       $icon.removeClass('fa-volume-off').addClass('fa-volume-up')
     }
   })
+
+  // sticky nav
+  var $header = $('header');
+  var st = window.scrollY;
+  var tempSt = 0;
+  var offset = 300;
+  if (st) {
+    window.scroll(0, 0);  // reset the scroll position to the top left of the document.
+    st = window.scrollY;
+  }
+
+  $header.addClass('fixed');
+
+  var detectScroll = function(){
+    tempSt = window.scrollY;
+    if ( tempSt > st + offset ) {
+      $header.addClass('hidden');
+      st = tempSt
+    } else if ( tempSt < st ) {
+      $header.removeClass('hidden');
+      st = tempSt
+    }
+  };
+
+  $(window).on('scroll', detectScroll)
+
 });
 
 

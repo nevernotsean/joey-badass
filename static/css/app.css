@@ -101,7 +101,7 @@
 
     .strikethrough:after {
         content: '';
-        height: 0.2rem;
+        height: 0.1em;
         background: #fff;
         width: 100%;
         transition: width 100ms ease;
@@ -169,6 +169,10 @@
         line-height: 110px;
     }
 
+    #nav-main>ul>li>a {
+      font-size: 12px;
+    }
+
     #nav-main a {
         color: #fff;
     }
@@ -193,6 +197,21 @@
       max-width: 60px;
       width: 100%;
       height: auto;
+    }
+
+/*sticky header*/
+
+    header.fixed {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      transition: all 500ms ease;
+    }
+
+    header.fixed.hidden {
+      -webkit-transform: translateY(-100%);
+      -transform: translateY(-100%);
     }
 
 /*flex sizing*/
@@ -275,7 +294,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      width: 400px;
+      width: 600px;
       -webkit-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
       transition: all 27s linear;
@@ -298,6 +317,10 @@
       transform: translateY(-50%);
       top: 50%;
       left: 0;
+    }
+
+    .hero .hero-video {
+      margin-top: 120px;
     }
 
     .no-hero {
@@ -327,16 +350,26 @@
         position: relative;
     }
 
-    .tour-bg.bg {
-      position: relative;
-      background-color: #121212;
-      background-image: url(../img/album-tour-blend-bg.png), url(../img/tourbg.jpg);
-      background-position: center top, center bottom;
-      padding: 15% 0;
+    .inner-wrapper.bg {
+      background-repeat: repeat-y;
       background-size: contain;
     }
 
-    .album-bg > .row {
+    /*.tour-section.bg {
+      position: relative;
+      background-color: #121212;.home .inner-wrapper
+      background-image: url(../img/album-tour-blend-bg.png), url(../img/tourbg.jpg);
+      background-position: center top, center bottom;
+      padding: 15% 0;
+      background-size: cover;
+    }*/
+
+    .tour-section {
+      position: relative;
+      padding: 50px 0;
+    }
+
+    .album-section > .row {
       margin-bottom: 50px;
     }
 
@@ -392,7 +425,7 @@
       padding: 100px 0;
     }
     .home .inner-wrapper {
-      padding-top: 0;
+      padding: 0;
     }
     table.tourdates {
         width: 100%;
@@ -418,7 +451,16 @@
     }
 
     .image-grid img {
-        padding: 10px;
+        width: 100%;
+        max-width: none;
+    }
+
+    .image-grid a.def-link.button {
+      padding: 8px 10px;
+    }
+
+    .image-grid ul.menu.simple li {
+      margin-right: 5px;
     }
 
     .more-dates {
@@ -527,6 +569,12 @@
     .post-type-music:hover .article-content:before {
       opacity: 0.3;
     }
+
+/*news type*/
+
+.post-type-news img {
+    opacity: 0.35;
+}
 
 /*hero sliders*/
 
