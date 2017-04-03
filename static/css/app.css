@@ -19,6 +19,10 @@
         letter-spacing: 0.2em;
     }
 
+    .h4 {
+      font-size: 1.5625rem;
+    }
+
     h1, h2, h3, h4, h5, h6, p, span {
         color: inherit;
     }
@@ -296,6 +300,10 @@
       left: 0;
     }
 
+    .no-hero {
+      margin-bottom: 120px;
+    }
+
     .bg {
         background: url() no-repeat center center;
         background-size: cover;
@@ -551,3 +559,23 @@
     .single-hero {
       margin-bottom: 50px;
     }
+
+/*icons*/
+i.fa * {
+    padding-left: 5px;
+    font-size: 9px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    letter-spacing: 0;
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+    display: inherit;
+}
+.button {
+  border: 2px solid #cb122c;
+  background: #000;
+  border-radius: 1.5rem;
+}
+.button:hover {
+  background: #cb122c;
+}
