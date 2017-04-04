@@ -1,10 +1,9 @@
 <article class="article-item post-type-{{post.post_type}}" id="post-{{post.ID}}">
   <section class="article-content">
     <a href="{{post.link}}" class="article-link def-link"></a>
-    <img src="{{post.thumbnail.src('large')}}" alt="" class="article-thumbnail">
-    <h2 class="article-h1">{{post.title}}</h2>
-    <div class="article-body">
-      {{post.content}}
+    <div class="image-pixelate">
+      <img src="{{post.thumbnail.src | resize(800, 400) }}" alt="" class="article-thumbnail">
     </div>
+    <h2 class="article-h1">{{post.title}}</h2>
   </section>
 </article>
