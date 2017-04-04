@@ -88,10 +88,15 @@ jQuery(document).ready(function($) {
         }
     };
 
-    $(window).on('scroll', detectScroll)
+    $(window).on('scroll', detectScroll);
 
-    pixelateImages()
+    $( window ).load( function(){
+      $('body').addClass('loaded');
+      pixelateImages();
+    });
+
 });
+
 
 
 var pixelateImages = function () {

@@ -630,7 +630,7 @@ i.fa * {
   position: relative;
 }
 
-.image-pixelate img{
+.loaded .image-pixelate img{
   visibility: hidden;
 }
 
