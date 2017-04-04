@@ -42,7 +42,7 @@ jQuery( document ).ready( function( $ ) {
     dots: true
   })
 
-  $('.hero video').addClass('grow');
+  // $('.hero video').addClass('grow');
 
   // mute button
   var video = $('video')[0];

@@ -4,6 +4,24 @@
     }
 /*Global*/
 
+    .fa.fa-volume-up:before {
+      content: '';
+    }
+    .fa.fa-volume-up {
+      width: 25px;
+      height: 25px;
+      background: url(../img/volume-on.svg) no-repeat center center;
+    }
+
+    .fa.fa-volume-off:before {
+      content: '';
+    }
+    .fa.fa-volume-off {
+      width: 25px;
+      height: 25px;
+      background: url(../img/volume-off.svg) no-repeat center center;
+    }
+
     body, html {
         height: 100%;
         width: 100%;
@@ -165,7 +183,7 @@
         display: block;
     }
 
-    #nav-main>ul>li>a, header.header .right-logo {
+    #nav-main>ul>li>a {
         line-height: 110px;
     }
 
@@ -191,12 +209,9 @@
     header.header .right-logo {
       display: inline-block;
       float: right;
-      padding: 0 30px;
-    }
-    header.header .right-logo img {
-      max-width: 60px;
-      width: 100%;
-      height: auto;
+      padding: 30px;
+      width: 164px;
+      line-height: 50px;
     }
 
 /*sticky header*/
@@ -219,7 +234,7 @@
     #nav-main ul.menu-links {
         display: flex;
         align-content: stretch;
-        width: calc(100% - 285px);
+        width: calc(100% - 335px);
     }
 
     #nav-main ul.menu-links li.menu-item {
@@ -242,10 +257,6 @@
         width: 100%;
     }
 
-    .mute i {
-      min-width: 16px;
-    }
-
     .inner-wrapper>.row {
         margin-bottom: 80px;
     }
@@ -264,12 +275,14 @@
     }
     .hero .video-ui {
       position: absolute;
-      bottom: 25px;
+      bottom: 16px;
       right: 30px;
     }
 
     .hero .video-ui > a {
       margin-right: 10px;
+      vertical-align: middle;
+      display: inline-block;
     }
 
     .hero h1 {
@@ -367,6 +380,10 @@
     .tour-section {
       position: relative;
       padding: 50px 0;
+    }
+
+    .album-section {
+      padding-top: 100px;
     }
 
     .album-section > .row {
