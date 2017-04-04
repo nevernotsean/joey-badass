@@ -4,20 +4,22 @@
 	<div class="content-wrapper">
 		<div class="row no-hero"></div>
 		<div class="row">
-			<div class="small-12 medium-4 column medium-offset-2">
-				<img src="{{post.thumbnail}}" alt="">
+			<div class="small-12 medium-4 column">
+				<img src="{{post.thumbnail.src("large")}}" alt="">
 			</div>
-			<div class="small-12 medium-4 column end">
+			<div class="small-12 medium-4 column">
 				<section class="article-content">
 					<h1 class="h4">{{post.title}}</h1>
 					<p class="blog-author">{{ post.post_date|date}}</p>
 					<div class="article-body">{{post.content}}</div>
-					<ul class="no-bullet">
-						{% for item in post.get_field('links') %}
-						    <li><a href="{{item.url}}" class="button def-link">{{item.icon}}  |  {{item.label}}</a></li>
-						{% endfor %}
-					</ul>
 				</section>
+			</div>
+			<div class="small-12 medium-4 column">
+				<ul class="no-bullet purchase-links">
+					{% for item in post.get_field('links') %}
+							<li><a href="{{item.url}}" class="button def-link">{{item.icon}}  |  {{item.label}}</a></li>
+					{% endfor %}
+				</ul>
 			</div>
 		</div>
 	</div><!-- /content-wrapper -->

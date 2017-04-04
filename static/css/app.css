@@ -286,7 +286,7 @@
     }
 
     .hero h1 {
-      margin: 180px 0;
+      margin: 140px 0;
     }
 
     .hero h6 {
@@ -296,7 +296,7 @@
 
     .hero .top {
       margin-bottom: 0 !important;
-      transform: translateY(50px);
+      /*transform: translateY(50px);*/
     }
 
     .hero .hero-bg {
@@ -620,7 +620,13 @@
     .single-hero {
       margin-bottom: 50px;
     }
-
+    .article-body iframe {
+      max-width: 100%;
+      height: auto;
+    }
+    .purchase-links a {
+      font-family: "Open Sans", sans-serif;
+    }
 /*icons*/
 i.fa * {
     padding-left: 5px;
