@@ -1,5 +1,4 @@
 {% if menu %}
-	<ul class="menu-links">
 		<li class="menu-item"><a href="{{site.url}}">Home</a></li>
 		<li class="menu-item"><a href="{{site.url}}/news">News</a></li>
 		<li class="menu-item"><a href="{{site.url}}/music">Music</a></li>
@@ -10,5 +9,4 @@
 			{% include "menu.twig" with {'menu': item.get_children} %}
 		</li>
 	{% endfor %}
-	</ul>
 {% endif %}

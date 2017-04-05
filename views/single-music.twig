@@ -17,7 +17,12 @@
 			<div class="small-12 medium-4 column">
 				<ul class="no-bullet purchase-links">
 					{% for item in post.get_field('links') %}
-							<li><a href="{{item.url}}" class="button def-link">{{item.icon}}  |  {{item.label}}</a></li>
+							{% set field = item.icon %}
+							<li>
+								<a href="{{item.url}}" class="button def-link">
+									{% include 'icons.twig' ignore missing %}{% if field != 'No Icon' %}  |  {% endif %}{{item.label}}
+								</a>
+							</li>
 					{% endfor %}
 				</ul>
 			</div>

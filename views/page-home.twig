@@ -14,16 +14,17 @@
         <div class="hero-content">
             <h6 class="top">out now</h6>
             <h1>All Ameri<span class="strikethrough">kkk</span>an Bada$$</h1>
-            <a target="_blank" href="https://joeybadass.lnk.to/AABA/">Download/Stream All-Ameri<span class="strikethrough">kkk</span>an Bada$$</a>
+            <a target="_blank" href="https://joeybadass.lnk.to/AABA/">Download/Stream <br class="show-for-small-only"/>All-Ameri<span class="strikethrough">kkk</span>an Bada$$</a>
         </div>
         <div class="lower">
-            {% include 'social-links.twig' %}
             <div class="video-ui">
                 <a href="/dev/joeybadass/video/land-of-the-free/">Watch Full Video</a>
                 <a href="#" class="mute def-link">
                     <i class="fa fa-volume-up"></i>
                 </a>
             </div>
+
+            {% include 'social-links.twig' %}
         </div>
     </div>
     <div class="content-wrapper amerikan-bg">
@@ -31,8 +32,11 @@
         <div class="inner-wrapper bg" style="background-image: url({{theme.path}}/static/img/homepage-bg-overlay.jpg);">
             <div class="album-section">
                 <div class="row">
+
+                        <div class="small-10 medium-8 large-8 column small-centered">
+                          <img class="album-rotate" src="{{theme.path}}/static/img/albumart.jpg" alt="">
+                        </div>
                     <div class="small-12 column text-center">
-                        <img class="album-rotate" src="{{theme.path}}/static/img/albumart.jpg" alt="">
                         <h2>Listen to the album</h2>
                         <ul class="menu simple">
                             <li>
@@ -55,39 +59,31 @@
                         </ul>
                     </div>
                 </div>
-                <div class="row" style="margin: 0;">
+                <div class="row">
                     <div class="small-12 medium-10 large-8 small-centered column text-center">
                         <div class="row small-up-1 medium-up-2 image-grid">
-                            <div class="column">
-                                <a href="{{site.url}}/music/devastated" class="def-link">
-																	<div class="image-pixelate">
-	                                	<img src="{{theme.path}}/static/img/joey-bad-devestated.jpg" alt="">
-	                                </div>
-																</a>
-																<h6 style="margin: 15px 0;">Devastated</h2>
-																<ul class="menu simple">
-																	<li><a href="https://open.spotify.com/album/49hUxaRYpToeJKerE9lNE5" class="def-link button"><i class="fa fa-spotify"><span>Spotify</span></i></a></li>
-																	<li><a href="https://itunes.apple.com/us/album/land-of-the-free-single/id1196337895?uo=4&&app=itunes&at=1001ltdd&ct=LFV_4d4564e98aedda21da971e0ea1b14643" class="def-link button"><i class="fa fa-music"><span>iTunes</span></i></a></li>
-																	<li><a href="https://itunes.apple.com/us/album/land-of-the-free-single/id1196337895?uo=4&&app=music&at=1001ltdd&ct=LFV_4d4564e98aedda21da971e0ea1b14643" class="def-link button"><i class="fa fa-apple"><span>Apple Music</span></i></a></li>
-																	<li><a href="https://play.google.com/music/m/Bodvemaepusglw2hh57javqbc4e" class="def-link button"><i class="fa fa-play"><span>Google Play</span></i></a></li>
-																	<li><a href="http://amazon.com/Land-of-the-Free-Explicit/dp/B01MS8SQH8?tag=linkfire03-20&ie=UTF8&linkCode=as2&ascsubtag=4d4564e98aedda21da971e0ea1b14643" class="def-link button"><i class="fa fa-amazon"><span>Amazon MP3</span></i></a></li>
-																</ul>
-                            </div>
-                            <div class="column">
-                                <a href="{{site.url}}/music/land-of-the-free" class="def-link">
-																	<div class="image-pixelate">
-	                                	<img src="{{theme.path}}/static/img/JB_Music_Land-of-the-Free.jpg" alt="">
-	                                </div>
-																</a>
-																<h6 style="margin: 15px 0;">Land of the Free</h2>
-																<ul class="menu simple">
-																	<li><a href="https://open.spotify.com/album/49hUxaRYpToeJKerE9lNE5" class="def-link button"><i class="fa fa-spotify"><span>Spotify</span></i></a></li>
-																	<li><a href="https://itunes.apple.com/us/album/land-of-the-free-single/id1196337895?uo=4&&app=itunes&at=1001ltdd&ct=LFV_4d4564e98aedda21da971e0ea1b14643" class="def-link button"><i class="fa fa-music"><span>iTunes</span></i></a></li>
-																	<li><a href="https://itunes.apple.com/us/album/land-of-the-free-single/id1196337895?uo=4&&app=music&at=1001ltdd&ct=LFV_4d4564e98aedda21da971e0ea1b14643" class="def-link button"><i class="fa fa-apple"><span>Apple Music</span></i></a></li>
-																	<li><a href="https://play.google.com/music/m/Bodvemaepusglw2hh57javqbc4e" class="def-link button"><i class="fa fa-play"><span>Google Play</span></i></a></li>
-																	<li><a href="http://amazon.com/Land-of-the-Free-Explicit/dp/B01MS8SQH8?tag=linkfire03-20&ie=UTF8&linkCode=as2&ascsubtag=4d4564e98aedda21da971e0ea1b14643" class="def-link button"><i class="fa fa-amazon"><span>Amazon MP3</span></i></a></li>
-																</ul>
-                            </div>
+                            {% for item in post.get_field('music_posts') %}
+                              <div class="column">
+
+                                  <article class="article-item post-type-{{item.post_type}}" id="post-{{item.ID}}">
+                                    <section class="article-content">
+                                      <a href="{{item.link}}" class="article-link def-link pixellate-trigger"></a>
+                                      <div class="image-pixelate">
+                                        <img src="{{item.thumbnail.src('large') }}" alt="" class="article-thumbnail">
+                                      </div>
+                                      <h2 class="article-h1">View</h2>
+                                    </section>
+                                  </article>
+
+                                  <h6 style="margin: 15px 0;">{{ item.title }}</h2>
+                                  <ul class="no-bullet simple menu purchase-links">
+                                    {% for link in item.get_field('links') %}
+                                        {% set field = link.icon %}
+                                        <li><a href="{{link.url}}" class="button def-link">{% include 'icons.twig' ignore missing %}</a></li>
+                                    {% endfor %}
+                                  </ul>
+                              </div>
+                            {% endfor %}
                         </div>
                         <a href="/music">View More Music</a>
                     </div>

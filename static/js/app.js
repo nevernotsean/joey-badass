@@ -1,25 +1,12 @@
-// function debounce(func, wait, immediate) {
-// 	var timeout;
-// 	return function() {
-// 		var context = this, args = arguments;
-// 		var later = function() {
-// 			timeout = null;
-// 			if (!immediate) func.apply(context, args);
-// 		};
-// 		var callNow = immediate && !timeout;
-// 		clearTimeout(timeout);
-// 		timeout = setTimeout(later, wait);
-// 		if (callNow) func.apply(context, args);
-// 	};
-// };
-
 jQuery(document).ready(function($) {
     var wh = document.documentElement.clientHeight
     var ww = document.documentElement.clientWidth
     // Your JavaScript goes here
     $(document).foundation()
 
+    if (ww > 768) {
     $('[rel="fullscreen"]').css('height', wh)
+    }
 
     window.addEventListener('resize', function() {
         wh = document.documentElement.clientHeight
@@ -64,6 +51,12 @@ jQuery(document).ready(function($) {
             $icon.removeClass('fa-volume-off').addClass('fa-volume-up')
         }
     })
+
+    // mobile nav
+    $('.menu-toggle').on('click', function (e) {
+      e.preventDefault()
+      $('body').toggleClass('open')
+    });
 
     // sticky nav
     var $header = $('header');
@@ -136,12 +129,13 @@ var pixelateImages = function () {
   var items = document.querySelectorAll('.image-pixelate'),
       _objs = [];
 
-  var Images = function(element, image, canvas, context) {
+  var Images = function(element, image, canvas, context, trigger) {
       this.element = element;
       this.image = image;
       this.canvas = canvas;
       this.context = context;
       this.pixelation = 1;
+      this.trigger = trigger;
   }
 
   Images.prototype.bindLoad = function() {
@@ -163,11 +157,11 @@ var pixelateImages = function () {
       this.imageHeight = this.canvas.height = this.image.height;
       this.context.drawImage(this.image, 0, 0, canvas.width, canvas.height);
 
-      this.element.addEventListener('mouseover', function() {
+      this.trigger.addEventListener('mouseover', function() {
           obj.mouseOver();
       }, false);
 
-      this.element.addEventListener('mouseout', function() {
+      this.trigger.addEventListener('mouseout', function() {
           obj.mouseOut();
       }, false);
   }
@@ -245,13 +239,14 @@ var pixelateImages = function () {
 
   Array.prototype.slice.call(items, 0).forEach(function(el, i) {
       var element = el;
-      image = el.querySelector('img'),
+          image = el.querySelector('img'),
           canvas = document.createElement('canvas'),
-          context = canvas.getContext('2d');
+          context = canvas.getContext('2d'),
+          trigger = jQuery(element).siblings('.pixellate-trigger')[0];
 
       el.appendChild(canvas);
 
-      _objs.push(new Images(element, image, canvas, context));
+      _objs.push(new Images(element, image, canvas, context, trigger));
       _objs[i].bindLoad();
   });
 }
