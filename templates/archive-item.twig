@@ -2,7 +2,11 @@
   <section class="article-content">
     <a href="{{post.link}}" class="article-link def-link pixellate-trigger"></a>
     <div class="image-pixelate">
+      {% if post.post_type == 'music' %}
+      <img src="{{post.thumbnail.src | resize(800, 800) }}" alt="" class="article-thumbnail">
+      {% else %}
       <img src="{{post.thumbnail.src | resize(800, 400) }}" alt="" class="article-thumbnail">
+      {% endif %}
     </div>
     <h2 class="article-h1">{{post.title}}</h2>
   </section>

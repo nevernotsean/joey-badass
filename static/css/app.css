@@ -5,6 +5,8 @@
     /*Global*/
     body {
       -webkit-overflow-scrolling: touch;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
     }
     .fa.fa-volume-up:before {
         content: '';
@@ -128,8 +130,24 @@
         top: 50%;
     }
 
-    header .menu-links a:hover:after, .content-wrapper a:hover:after {
+    header .menu-links a:hover:after, .content-wrapper a:hover:after{
         width: calc(100% - 0.25em);
+    }
+
+    header .menu-links a.active:after, .mobile-links li a.active:after {
+      width: calc(100% - 0.25em);
+      content: '';
+      height: 2px;
+      background: #fff;
+      transition: width 100ms ease;
+      transition-delay: 100ms;
+      position: absolute;
+      left: 0;
+      top: 50%;
+    }
+
+    .mobile-links li a {
+      position: relative;
     }
 
     .def-link {
@@ -194,7 +212,7 @@
     }
 
     .hdr-logo-link img {
-        padding: 18px;
+        padding: 30px;
         padding-left: 0;
         height: 120px;
         width: auto;
@@ -280,6 +298,7 @@
     #nav-main ul.menu-links li.menu-item {
         flex-grow: 1;
         text-align: center;
+        padding: 0 20px;
     }
     /*home*/
 
@@ -468,7 +487,7 @@
             height: 100%;
             top: 0;
             left: 0;
-            background: url(../img/jba_flag_top.jpg) no-repeat top center, url(../img/jba_flag_top_stripes.jpg) repeat-y center center;
+            background: url(../img/jba_flag_top.jpg) no-repeat top center, url(../img/jba_flag_top_stripes.jpg) repeat-y bottom center;
             background-size: contain;
             will-change: transform;
             z-index: -1;
@@ -499,8 +518,16 @@
     }
 
     .tourdates td span {
-        text-transform: uppercase;
+        text-transform: capitalize;
         letter-spacing: 0.2em;
+    }
+
+    .tourdates td:nth-child(2) span {
+        text-transform: uppercase;
+    }
+
+    .tourdates td:last-child {
+        text-align: right;
     }
 
     .image-grid {
@@ -529,10 +556,10 @@
     }
 
     .more-dates div {
-        letter-spacing: normal;
-        font-weight: bold;
+        /*letter-spacing: normal;*/
+        /*font-weight: bold;*/
         display: inline-block;
-        transform: translateY(1em);
+        /*transform: translateY(1em);*/
     }
 
     .full-height {
@@ -545,7 +572,7 @@
     }
 
     .archive-title {
-        padding: 50px 0;
+        padding: 25px 0;
     }
 
     .article-item {
@@ -660,8 +687,11 @@
     }
     /*single*/
 
-    .single-hero {
-        margin-bottom: 50px;
+    .hero.single-hero {
+      max-width: 75em;
+      margin: 0 auto;
+      margin-top: 120px;
+      margin-bottom: 50px;
     }
 
     .post-type-music .article-body iframe {
@@ -715,6 +745,7 @@
         left: 0;
         width: 100%;
         height: 100%;
+        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         z-index: 99;
     }
@@ -741,7 +772,7 @@
         font-size: 32px;
     }
 
-    h1.archive-title.text-center {
+    h1.archive-title {
         font-size: 32px;
     }
 
@@ -839,8 +870,11 @@
         color: #fff;
     }
 
-    .offcanvas-wrapper {
-        position: relative;
+    .offcanvas-wrap {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
     }
 
     .offcanvas-menu {
@@ -939,7 +973,13 @@
       outline: none;
     }
 
-    @media screen and (max-width: 640px) {
+    @media screen and (max-width: 920px) {
+      #nav-main ul.menu-links li.menu-item {
+          padding: 0;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
         html, body {
             overflow-x: hidden;
             max-width: 100vw;
@@ -967,7 +1007,7 @@
             text-align: center;
         }
         .hero .video-ui {
-            margin-bttom: 10px;
+            margin-bottom: 10px;
         }
         .hero .video-ui a {
             font-size: 12px;

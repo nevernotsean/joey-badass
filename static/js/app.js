@@ -4,8 +4,14 @@ jQuery(document).ready(function($) {
     // Your JavaScript goes here
     $(document).foundation()
 
+    // active states
+    var activeLinks = $('ul a[href="http://' + location.host + '/' + location.pathname.split("/")[1] + '"]')
+    activeLinks.addClass('active');
+
+
+    // full screen
     if (ww > 768) {
-    $('[rel="fullscreen"]').css('height', wh)
+      $('[rel="fullscreen"]').css('height', wh)
     }
 
     window.addEventListener('resize', function() {
@@ -37,6 +43,11 @@ jQuery(document).ready(function($) {
     var video = $('video')[0];
     var $muteButton = $('.mute');
     var $icon = $muteButton.find('i.fa');
+
+    if (ww < 768) {
+      video.muted = true
+      $icon.removeClass('fa-volume-up').addClass('fa-volume-off')
+    }
 
     $muteButton.on('click', function(e) {
         e.preventDefault()
@@ -84,8 +95,12 @@ jQuery(document).ready(function($) {
     $(window).on('scroll', detectScroll);
 
     $( window ).load( function(){
-      $('body').addClass('loaded');
-      pixelateImages();
+
+      if (ww > 768) {
+        $('body').addClass('loaded');
+        pixelateImages();
+      }
+
     });
 
 });
