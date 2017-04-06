@@ -3,7 +3,7 @@
 {% block content %}
     <div class="hero">
         <div class="bg hero-bg" rel="fullscreen">
-            <video playsinline="" autoplay="" loop="" width="600" height="337.5" preload="metadata">
+            <video playsinline="" autoplay="" loop="" width="600" height="337.5" preload="metadata" muted>
                 <!-- 				<source type="video/mp4" src="{{theme.path}}/static/jba-teaser.mp4"> -->
                 <source type="video/mp4" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="https://player.vimeo.com/external/211015222.hd.mp4?s=06f330a7dcf6755400b63de0a9abb9a26b7bf33b&profile_id=174">
                 <!-- 				<source type="video/webm" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="//bg.cdn.ustudio.com/app/transcodes/TuX1xml2yZsS.webm"> -->
@@ -20,7 +20,7 @@
             <div class="video-ui">
                 <a href="/dev/joeybadass/video/land-of-the-free/">Watch Full Video</a>
                 <a href="#" class="mute def-link">
-                    <i class="fa fa-volume-up"></i>
+                    <i class="fa fa-volume-off"></i>
                 </a>
             </div>
 
@@ -74,14 +74,9 @@
                                       <h2 class="article-h1">View</h2>
                                     </section>
                                   </article>
-
-                                  <h6 style="margin: 15px 0;">{{ item.title }}</h2>
-                                  <ul class="no-bullet simple menu purchase-links">
-                                    {% for link in item.get_field('links') %}
-                                        {% set field = link.icon %}
-                                        <li><a href="{{link.url}}" class="button def-link">{% include 'icons.twig' ignore missing %}</a></li>
-                                    {% endfor %}
-                                  </ul>
+                                  <a href="{{item.link}}">
+                                    <h6 style="margin: 15px 0;">{{ item.title }}</h2>
+                                  </a>
                               </div>
                             {% endfor %}
                         </div>
@@ -91,7 +86,7 @@
             </div>
             <div class="tour-section">
                 <div class="row">
-                    <div class="small-12 medium-12 large-8 small-centered column text-center">
+                    <div class="small-12 medium-12 large-6 small-centered column text-center">
                         <h2>JOEY BADA$$ TOUR</h2>
                         <table class="tourdates">
                             <tbody>
@@ -142,9 +137,38 @@
                 <div class="row">
                     <div class="small-12 column text-center">
                         <div class="full-height">
-                            <a target="_blank" title="Shop Merch" href="https://shop.theproera.com/">View the merch</a>
+                            <!-- <a target="_blank" title="Shop Merch" href="https://shop.theproera.com/">View the merch</a> -->
                         </div>
                     </div>
+                </div>
+                <div class="row grey-color">
+                  <div class="small-12 column text-center">
+                    {% include 'social-links.twig' %}
+                  </div>
+                </div>
+                <div class="row grey-color">
+                  <div class="small-12 column text-center">
+                    <h6>Listen to the album:</h6>
+                      <ul class="menu simple" style="margin-bottom: 50px;">
+                          <li>
+                              <a target="_blank" href="https://itunes.apple.com/us/album/all-amerikkkan-bada%24%24/id1210537350?uo=4&app=itunes&at=1001ltdd&ct=LFV_4423c535e02ecb678824817b7c8ed8a0">iTunes</a>
+                          </li>
+                          <li>
+                              <a target="_blank" href="https://itunes.apple.com/us/album/all-amerikkkan-bada%24%24/id1210537350?uo=4&&app=music&at=1001ltdd&ct=LFV_4423c535e02ecb678824817b7c8ed8a0">Apple Music</a>
+                          </li>
+                          <li>
+                              <a target="_blank" href="https://play.google.com/store/music/album?id=Bnm24npa57x67y2nbyuy4djytwm&tid=song-T333rxm54pz66y26kus5grbiere&PCamRefID=LFV_4423c535e02ecb678824817b7c8ed8a0">Google Play</a>
+                          </li>
+
+                          <li>
+                              <a target="_blank" href="http://amazon.com/All-Amerikkkan-Bada-Explicit/dp/B06XN5N339?tag=linkfire03-20&ie=UTF8&linkCode=as2&ascsubtag=4423c535e02ecb678824817b7c8ed8a0">Amazon</a>
+                          </li>
+                          <li>
+                              <a target="_blank" href="https://open.spotify.com/user/joeybadassofficial/playlist/3DW6Y58zVOY4K36zjrVyg3">Spotify</a>
+                          </li>
+
+                      </ul>
+                  </div>
                 </div>
             </div>
         </div>

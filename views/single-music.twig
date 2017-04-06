@@ -19,7 +19,7 @@
 					{% for item in post.get_field('links') %}
 							{% set field = item.icon %}
 							<li>
-								<a href="{{item.url}}" class="button def-link">
+								<a href="{{item.url}}" class="">
 									{% include 'icons.twig' ignore missing %}{% if field != 'No Icon' %}  |  {% endif %}{{item.label}}
 								</a>
 							</li>
