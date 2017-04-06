@@ -25,6 +25,22 @@
         height: 25px;
         background: url(../img/volume-off.svg) no-repeat center center;
     }
+    i.fa.fa-bars:before {
+        content: '';
+        width: 25px;
+        height: 25px;
+        background: url(../img/hamburguesa_bttn.svg) no-repeat no-repeat;
+        background-size: 25px;
+        display: inline-block;
+    }
+    i.fa.fa-times:before {
+        content: '';
+        width: 25px;
+        height: 25px;
+        background: url(../img/close_bttn.svg) no-repeat no-repeat;
+        background-size: 25px;
+        display: inline-block;
+    }
 
     body, html {
         height: 100%;
@@ -148,6 +164,12 @@
     footer>.row {
         margin-bottom: 50px;
     }
+    footer .social li a {
+      color: #fff;
+    }
+    .copyright, .subscribe {
+      margin-bottom: 20px;
+    }
     /*Navigation*/
 
     header {
@@ -220,12 +242,11 @@
     }
 
     header.header .right-logo {
-        display: inline-block;
-        float: right;
-        padding: 30px;
-        padding-right: 0;
-        width: 164px;
-        line-height: 50px;
+      display: inline-block;
+      float: right;
+      padding: 30px 0;
+      width: 120px;
+      line-height: 50px;
     }
     /*sticky header*/
 
@@ -245,7 +266,9 @@
     /*flex sizing*/
 
     header.header .wrapper>nav {
-        display: inline-flex;
+      position: absolute;
+      width: 100%;
+      display: flex;
     }
 
     #nav-main ul.menu-links {
@@ -782,9 +805,10 @@
 
     .subscribe {
       text-align: center;
+      margin-bottom: 20px;
     }
 
-    .subscribe .block {
+    .home .subscribe .block {
         display: inline-block;
         background: url(../img/pixelated-flag.png);
         padding: 10px;
@@ -823,8 +847,8 @@
         position: fixed;
         left: 0;
         top: 0;
-        width: 90%;
-        max-width: 90vw;
+        width: 100%;
+        max-width: 100vw;
         transform: translateX(-100%);
         transition: all 500ms ease;
         background-color: #000;
@@ -839,7 +863,7 @@
     }
 
     body.open .offcanvas-wrap {
-        transform: translateX(90%);
+        transform: translateX(100%);
     }
 
     .open .offcanvas-menu {
@@ -850,8 +874,15 @@
         padding-top: 20px;
     }
 
+    .offcanvas-wrapper a.menu-toggle {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
     .hdr-logo-link-mobile {
         margin: 20px 0;
+        padding: 0 50px;
         display: inline-block;
     }
 
@@ -859,8 +890,15 @@
         margin: 10px 0;
     }
 
-    .mobile-top-bar h1 {
+    .mobile-top-bar img {
         display: inline-block;
+        height: 50px;
+        width: auto;
+        padding: 10px;
+    }
+
+    .mobile-top-bar a.menu-toggle {
+      float: right;
     }
     /*subscribe*/
 
@@ -921,7 +959,7 @@
         }
         header {
             background: #000;
-            border-bottom: 2px solid #fff;
+            /*border-bottom: 2px solid #fff;*/
         }
         .hero .video-ui, .hero .social.menu {
             position: static;
@@ -948,7 +986,7 @@
         }
         table.tourdates td:last-child a {
             /*font-family: "Open Sans",sans-serif;*/
-            font-weight: bold;
+            /*font-weight: bold;
             text-align: center;
             font-size: 9px;
             margin-bottom: 0;
@@ -963,10 +1001,10 @@
             color: #fefefe;
             border: 2px solid #cb122c;
             background: #000;
-            border-radius: 1.5rem;
+            border-radius: 1.5rem;*/
         }
         table.tourdates td:last-child a:before, table.tourdates td:last-child a:after {
-            content: none;
+            /*content: none;*/
         }
         body:not(.home) .post-type-music .article-h1 {
             opacity: 1;
@@ -975,4 +1013,9 @@
             opacity: 0.45;
         }
         /*end small breakpoint*/
+    }
+
+    .siteby {
+      color: #666 !important;
+      font-size: 12px;
     }
