@@ -188,6 +188,9 @@
     .copyright, .subscribe {
       margin-bottom: 20px;
     }
+    .reveal-overlay {
+      z-index: 9999;
+    }
     /*Navigation*/
 
     header {
@@ -706,6 +709,10 @@
     .purchase-links li {
         padding: 5px 0;
     }
+    .single-music iframe {
+        max-width: 100%;
+        height: 25vw;
+    }
     /*icons*/
 
     i.fa * {
@@ -863,6 +870,7 @@
 
     .menu-toggle {
         padding: 10px;
+        margin-top: 10px;
         display: inline-block;
     }
 
@@ -929,6 +937,8 @@
         height: 50px;
         width: auto;
         padding: 10px;
+        padding-bottom: 0;
+        margin-top: 5px;
     }
 
     .mobile-top-bar a.menu-toggle {
