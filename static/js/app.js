@@ -1,17 +1,22 @@
 jQuery(document).ready(function($) {
     var wh = document.documentElement.clientHeight
     var ww = document.documentElement.clientWidth
+    var headerHeight = $('header').height()
+    var footerHeight = $('footer').height()
     // Your JavaScript goes here
     $(document).foundation()
 
     // active states
-    var activeLinks = $('ul a[href="http://' + location.host + '/' + location.pathname.split("/")[1] + '"]')
+    var activeLinks = $('ul a[href="https://' + location.host + '/' + location.pathname.split("/")[1] + '"]')
     activeLinks.addClass('active');
 
 
     // full screen
     if (ww > 768) {
       $('[rel="fullscreen"]').css('height', wh)
+      $('[rel="fillscreen"]').css('min-height', wh - headerHeight - footerHeight)
+    } else {
+      $('[rel="fullscreen"]').css('height', wh * 0.9)
     }
 
     window.addEventListener('resize', function() {
@@ -19,6 +24,9 @@ jQuery(document).ready(function($) {
         ww = document.documentElement.clientWidth
         if (ww > 768) {
             $('[rel="fullscreen"]').css('height', wh)
+            $('[rel="fillscreen"]').css('min-height', wh - headerHeight - footerHeight)
+        } else {
+          $('[rel="fullscreen"]').css('height', wh * 0.9)
         }
     })
 
@@ -26,6 +34,8 @@ jQuery(document).ready(function($) {
         wh = document.documentElement.clientHeight
         ww = document.documentElement.clientWidth
         $('[rel="fullscreen"]').css('height', wh)
+        $('[rel="fillscreen"]').css('min-height', wh - headerHeight - footerHeight)
+        $('body').removeClass('open')
     });
 
     if ($('#wavyCanvas').length) {
@@ -44,7 +54,7 @@ jQuery(document).ready(function($) {
     var $muteButton = $('.mute');
     var $icon = $muteButton.find('i.fa');
 
-    if (ww < 768) {
+    if (ww < 768 && video) {
       video.muted = true
       $icon.removeClass('fa-volume-up').addClass('fa-volume-off')
     }

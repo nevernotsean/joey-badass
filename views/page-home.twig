@@ -3,24 +3,22 @@
 {% block content %}
     <div class="hero">
         <div class="bg hero-bg" rel="fullscreen">
-            <video playsinline="" autoplay="" loop="" width="600" height="337.5" preload="metadata" muted>
-                <!-- 				<source type="video/mp4" src="{{theme.path}}/static/jba-teaser.mp4"> -->
+            <video playsinline="" autoplay="" loop="" width="600" height="337.5" preload="metadata">
                 <source type="video/mp4" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="https://player.vimeo.com/external/211015222.hd.mp4?s=06f330a7dcf6755400b63de0a9abb9a26b7bf33b&profile_id=174">
-                <!-- 				<source type="video/webm" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="//bg.cdn.ustudio.com/app/transcodes/TuX1xml2yZsS.webm"> -->
                 <source type="video/mp4" data-src="//bg.cdn.ustudio.com/app/transcodes/TrjIRpNdsK1V.mp4" src="https://player.vimeo.com/external/211015222.hd.mp4?s=06f330a7dcf6755400b63de0a9abb9a26b7bf33b&profile_id=174">
-                <!-- 				<source type="video/webm" data-src="//bg.cdn.ustudio.com/app/transcodes/TSg23xf061MF.webm" src="//bg.cdn.ustudio.com/app/transcodes/TSg23xf061MF.webm"> -->
             </video>
         </div>
         <div class="hero-content">
             <h6 class="top">out now</h6>
             <h1>All Ameri<span class="strikethrough">kkk</span>an Bada$$</h1>
-            <a target="_blank" href="https://joeybadass.lnk.to/AABA/">Download/Stream <br class="show-for-small-only"/>All-Ameri<span class="strikethrough">kkk</span>an Bada$$</a>
+            <a target="_blank" href="https://joeybadass.lnk.to/AABA/">Download/Stream
+              <span class="hide-for-small-only">All-Ameri<span class="strikethrough">kkk</span>an Bada$$</a></span>
         </div>
         <div class="lower">
             <div class="video-ui">
-                <a href="/dev/joeybadass/video/land-of-the-free/">Watch Full Video</a>
-                <a href="#" class="mute def-link">
-                    <i class="fa fa-volume-off"></i>
+                <a href="./video/land-of-the-free/">Watch Full Video</a>
+                <a href="#" class="mute def-link hide-for-small-only">
+                    <i class="fa fa-volume-up"></i>
                 </a>
             </div>
 
@@ -32,13 +30,12 @@
         <div class="inner-wrapper bg" style="background-image: url({{theme.path}}/static/img/homepage-bg-overlay.jpg);">
             <div class="album-section">
                 <div class="row">
-
-                        <div class="small-10 medium-8 large-6 column small-centered">
+                        <div class="small-12 medium-8 large-6 column small-centered">
                           <img class="album-rotate" src="{{theme.path}}/static/img/albumart.jpg" alt="">
                         </div>
                     <div class="small-12 column text-center">
                         <a href="https://joeybadass.lnk.to/AABA"><h2>Listen to the album</h2></a>
-                        <ul class="menu simple">
+                        <ul class="menu simple hide-for-small-only">
                             <li>
                                 <a target="_blank" href="https://joeybadass.lnk.to/AABA/itunes">iTunes</a>
                             </li>

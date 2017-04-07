@@ -4,27 +4,25 @@
 	<div class="content-wrapper">
 		<div class="row no-hero"></div>
 		<div class="row">
-			<div class="small-12 medium-4 column">
+			<h1 class="h4 text-center" style="margin: 30px 0;">{{post.title}}</h1>
+			<div class="small-12 medium-offset-2 medium-4 column">
 				<img src="{{post.thumbnail.src("large")}}" alt="">
 			</div>
-			<div class="small-12 medium-4 column">
+			<div class="small-12 medium-4 column end">
 				<section class="article-content">
-					<h1 class="h4">{{post.title}}</h1>
 					<p class="blog-author">{{ post.post_date|date}}</p>
+					<ul class="no-bullet purchase-links">
+						{% for item in post.get_field('links') %}
+								{% set field = item.icon %}
+								<li>
+									<a href="{{item.url}}" class="">
+										{% include 'icons.twig' ignore missing %}{% if field != 'No Icon' %}  |  {% endif %}{{item.label}}
+									</a>
+								</li>
+						{% endfor %}
+					</ul>
 					<div class="article-body">{{post.content}}</div>
 				</section>
-			</div>
-			<div class="small-12 medium-4 column">
-				<ul class="no-bullet purchase-links">
-					{% for item in post.get_field('links') %}
-							{% set field = item.icon %}
-							<li>
-								<a href="{{item.url}}" class="">
-									{% include 'icons.twig' ignore missing %}{% if field != 'No Icon' %}  |  {% endif %}{{item.label}}
-								</a>
-							</li>
-					{% endfor %}
-				</ul>
 			</div>
 		</div>
 	</div><!-- /content-wrapper -->
