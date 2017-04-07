@@ -7,41 +7,70 @@
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
-		<header class="header" >
-			{% block header %}
-				<div class="wrapper">
-					<a class="hdr-logo-link" href="{{site.url}}" rel="home">
-						<img src="{{theme.path}}/static/img/jba-logo-wht.svg" alt="">
-					</a>
-					<nav id="nav-main" class="nav-main" role="navigation">
-						{% include "menu.twig" with {'menu': menu.get_items} %}
-					</nav><!-- #nav -->
-					<div class="right-logo">
-						<a target="_blank" title="Pro Era Records" href="http://theproera.com/" class="def-link"><img width="100" height="auto" src="{{theme.path}}/static/img/perecords.svg" alt=""></a>
+		<div class="offcanvas-menu show-for-small-only">
+			<div class="offcanvas-wrapper">
+				<a href="#" class="menu-toggle text-right"><i class="fa fa-times"></i></a>
+				<div class="row">
+					<div class="small-10 medium-6 small-centered column">
+						<a class="hdr-logo-link-mobile" href="{{site.url}}" rel="home">
+							<img src="{{theme.path}}/static/img/jba-logo-wht.svg" alt="">
+						</a>
 					</div>
 				</div>
-			{% endblock %}
-		</header>
-
-		<section id="content" role="main" class="content-wrapper">
-			{% if title %}<h1 class="base-title">{{title}}</h1>{% endif %}
-			<div class="wrapper {{sidebar_class}}">
-				{% block content %}
-					Sorry, no content
-				{% endblock %}
+				<nav class="mobile-nav">
+					<ul class="mobile-links no-bullet text-center">
+						{% include "menu.twig" with {'menu': menu.get_items} %}
+						<li><a target="_blank" title="Pro Era Records" href="http://theproera.com/" class="def-link" style="width: 150px;     display: inline-block; margin-top: 50px;"><img src="{{theme.path}}/static/img/perecords.svg" alt=""></a></li>
+						<li><a class="siteby" href="http://www.never-not.com">site by nevernot</a></li>
+					</ul>
+				</nav>
 			</div>
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-			{% endif %}
-		</section>
+		</div>
+		<div class="offcanvas-wrap">
+			<header class="header">
+				{% block header %}
+					<div class="wrapper hide-for-small-only">
+						<a class="hdr-logo-link" href="{{site.url}}" rel="home">
+							<img src="{{theme.path}}/static/img/jba-logo-wht.svg" alt="">
+						</a>
+						<nav id="nav-main" class="nav-main" role="navigation">
+							<ul class="menu-links">
+								{% include "menu.twig" with {'menu': menu.get_items} %}
+							</ul>
+						</nav><!-- #nav -->
+						<div class="right-logo">
+							<a target="_blank" title="Pro Era Records" href="http://theproera.com/" class="def-link"><img src="{{theme.path}}/static/img/perecords.svg" alt=""></a>
+						</div>
+					</div>
 
-		{% block footer %}
-			<footer id="footer">
-				{% include 'footer.twig' %}
-			</footer>
-			{{ function('wp_footer') }}
-		{% endblock %}
+					<div class="mobile-top-bar show-for-small-only">
+						<a href="#" class="menu-toggle"><i class="fa fa-bars fa-2x"></i></a>
+						<img src="{{theme.path}}/static/img/jba-logo-wht.svg" alt="">
+					</div>
+
+				{% endblock %}
+			</header>
+
+			<section id="content" role="main" class="content-wrapper">
+				{% if title %}<h1 class="base-title">{{title}}</h1>{% endif %}
+				<div class="wrapper {{sidebar_class}}">
+					{% block content %}
+						Sorry, no content
+					{% endblock %}
+				</div>
+				{% if sidebar %}
+					<aside class="layout-sidebar">
+						{{sidebar}}
+					</aside>
+				{% endif %}
+			</section>
+
+			{% block footer %}
+				<footer id="footer">
+					{% include 'footer.twig' %}
+				</footer>
+				{{ function('wp_footer') }}
+			{% endblock %}
+		</div>
 	</body>
 </html>

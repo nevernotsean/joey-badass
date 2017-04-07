@@ -48,6 +48,10 @@ class StarterSite extends TimberSite {
 
 		// designer overrides
 		wp_enqueue_style( 'robs', get_template_directory_uri() . '/static/css/robs.css');
+
+		// add_filter('timber_compile_result', function($output) {
+		// 	return str_replace('http://www.joeybadass.com', 'https://www.joeybadass.com', $output);
+		// });
 	}
 
 	function register_post_types() {
@@ -78,7 +82,6 @@ class StarterSite extends TimberSite {
 		$twig->addFilter('myfoo', new Twig_SimpleFilter('myfoo', array($this, 'myfoo')));
 		return $twig;
 	}
-
 }
 
 new StarterSite();

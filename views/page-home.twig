@@ -1,128 +1,174 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<!-- <div id="console" style="position: fixed; top: 0; right: 0; padding: 3px; background:#000; color: #fff; z-index: 99;"></div> -->
-	<div class="hero">
-		<div class="bg hero-bg" rel="fullscreen">
-			<video playsinline="" autoplay="" loop="" width="600" height="337.5" preload="metadata">
-<!-- 				<source type="video/mp4" src="{{theme.path}}/static/jba-teaser.mp4"> -->
-				<source type="video/mp4" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="https://player.vimeo.com/external/211015222.hd.mp4?s=06f330a7dcf6755400b63de0a9abb9a26b7bf33b&profile_id=174">
-<!-- 				<source type="video/webm" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="//bg.cdn.ustudio.com/app/transcodes/TuX1xml2yZsS.webm"> -->
-				<source type="video/mp4" data-src="//bg.cdn.ustudio.com/app/transcodes/TrjIRpNdsK1V.mp4" src="https://player.vimeo.com/external/211015222.hd.mp4?s=06f330a7dcf6755400b63de0a9abb9a26b7bf33b&profile_id=174">
-<!-- 				<source type="video/webm" data-src="//bg.cdn.ustudio.com/app/transcodes/TSg23xf061MF.webm" src="//bg.cdn.ustudio.com/app/transcodes/TSg23xf061MF.webm"> -->
-			</video>
-		</div>
-		<div class="hero-content">
-			<h6 class="top">out now</h6>
-			<h1>All Ameri<span class="strikethrough">kkk</span>an Bada$$</h1>
-			<a target="_blank" href="https://joeybadass.lnk.to/AABA/">Download/Stream All-Amerikkkan Bada$$</a>
-		</div>
-		<div class="lower">
-			{% include 'social-links.twig' %}
-			<div class="video-ui">
-				<a href="/dev/joeybadass/video/land-of-the-free/">Watch Full Video</a>
-				<a href="#" class="mute def-link"><i class="fa fa-volume-up"></i></a>
-			</div>
-		</div>
-	</div>
-	<div class="content-wrapper amerikan-bg">
-		<canvas id="wavyCanvas"></canvas>
-		<img id="flagsrc" data-src="{{theme.path}}/static/img/american-bg-sm.jpg" alt="">
-		<div class="inner-wrapper">
-			<div class="album-bg bg" style="background-image: url({{theme.path}}/static/img/album-bg-a.jpg);">
-				<div class="row">
-					<div class="small-12 column text-center">
-						<img class="album-rotate" src="{{theme.path}}/static/img/albumart.jpg" alt="">
-						<h2>Listen to the album</h2>
-						<ul class="menu simple">
-							<li><a target="_blank" href="https://itunes.apple.com/us/album/all-amerikkkan-bada%24%24/id1210537350?uo=4&app=itunes&at=1001ltdd&ct=LFV_4423c535e02ecb678824817b7c8ed8a0">iTunes</a></li>
-							<li><a target="_blank" href="https://itunes.apple.com/us/album/all-amerikkkan-bada%24%24/id1210537350?uo=4&&app=music&at=1001ltdd&ct=LFV_4423c535e02ecb678824817b7c8ed8a0">Apple Music</a></li>
-							<li><a target="_blank" href="https://play.google.com/store/music/album?id=Bnm24npa57x67y2nbyuy4djytwm&tid=song-T333rxm54pz66y26kus5grbiere&PCamRefID=LFV_4423c535e02ecb678824817b7c8ed8a0">Google Play</a></li>
+    <div class="hero">
+        <div class="bg hero-bg" rel="fullscreen">
+            <video playsinline="" autoplay="" loop="" width="600" height="337.5" preload="metadata">
+                <source type="video/mp4" data-breakpoint="breakpoints.suzuki.mobile-lg" data-media="(max-width: 600px)" data-src="https://player.vimeo.com/external/211015222.hd.mp4?s=06f330a7dcf6755400b63de0a9abb9a26b7bf33b&profile_id=174">
+                <source type="video/mp4" data-src="//bg.cdn.ustudio.com/app/transcodes/TrjIRpNdsK1V.mp4" src="https://player.vimeo.com/external/211015222.hd.mp4?s=06f330a7dcf6755400b63de0a9abb9a26b7bf33b&profile_id=174">
+            </video>
+        </div>
+        <div class="hero-content">
+            <h6 class="top">out now</h6>
+            <h1>All Ameri<span class="strikethrough">kkk</span>an Bada$$</h1>
+            <a target="_blank" href="https://joeybadass.lnk.to/AABA/">Download/Stream
+              <span class="hide-for-small-only">All-Ameri<span class="strikethrough">kkk</span>an Bada$$</a></span>
+        </div>
+        <div class="lower">
+            <div class="video-ui">
+                <a href="./video/land-of-the-free/">Watch Full Video</a>
+                <a href="#" class="mute def-link hide-for-small-only">
+                    <i class="fa fa-volume-up"></i>
+                </a>
+            </div>
 
-							<li><a target="_blank" href="http://amazon.com/All-Amerikkkan-Bada-Explicit/dp/B06XN5N339?tag=linkfire03-20&ie=UTF8&linkCode=as2&ascsubtag=4423c535e02ecb678824817b7c8ed8a0">Amazon</a></li>
-							<li><a target="_blank" href="https://open.spotify.com/user/joeybadassofficial/playlist/3DW6Y58zVOY4K36zjrVyg3">Spotify</a></li>
+            {% include 'social-links.twig' %}
+        </div>
+    </div>
+    <div class="content-wrapper amerikan-bg">
+        <img id="flagsrc" data-src="{{theme.path}}/static/img/american-bg-sm.jpg" alt="">
+        <div class="inner-wrapper bg" style="background-image: url({{theme.path}}/static/img/homepage-bg-overlay.jpg);">
+            <div class="album-section">
+                <div class="row">
+                        <div class="small-12 medium-8 large-6 column small-centered">
+                          <img class="album-rotate" src="{{theme.path}}/static/img/albumart.jpg" alt="">
+                        </div>
+                    <div class="small-12 column text-center">
+                        <a href="https://joeybadass.lnk.to/AABA"><h2>Listen to the album</h2></a>
+                        <ul class="menu simple hide-for-small-only">
+                            <li>
+                                <a target="_blank" href="https://joeybadass.lnk.to/AABA/itunes">iTunes</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://joeybadass.lnk.to/AABA/applemusic">Apple Music</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://joeybadass.lnk.to/AABA/google-play">Google Play</a>
+                            </li>
 
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="small-12 medium-8 large-6 small-centered column text-center">
-						<div class="row small-up-1 medium-up-2 image-grid">
-							<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
-							<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
-<!--
-							<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
-							<div class="column"><a href="#" class="def-link"><img src="{{theme.path}}/static/img/ph-album-art1.jpg" alt=""></a></div>
--->
-						</div>
-						<a href="/music">View More Music</a>
-					</div>
-				</div>
-			</div>
-			<div class="tour-bg bg">
-				<div class="row">
-					<div class="small-12 medium-12 large-8 small-centered column text-center">
-						<h2>JOEY BADA$$ TOUR</h2>
-						<table class="tourdates">
-							<tr>
-								<td>DATE, XX, 2017</td>
-								<td><span>Venue</span></td>
-								<td>Location, ST</td>
-								<td><a href="#">Buy Tickets</a></td>
-							</tr>
-							<tr>
-								<td>DATE, XX, 2017</td>
-								<td><span>Venue</span></td>
-								<td>Location, ST</td>
-								<td><a href="#">Buy Tickets</a></td>
-							</tr>
-							<tr>
-								<td>DATE, XX, 2017</td>
-								<td><span>Venue</span></td>
-								<td>Location, ST</td>
-								<td><a href="#">Buy Tickets</a></td>
-							</tr>
-							<tr>
-								<td>DATE, XX, 2017</td>
-								<td><span>Venue</span></td>
-								<td>Location, ST</td>
-								<td><a href="#">Buy Tickets</a></td>
-							</tr>
-							<tr>
-								<td>DATE, XX, 2017</td>
-								<td><span>Venue</span></td>
-								<td>Location, ST</td>
-								<td><a href="#">Buy Tickets</a></td>
-							</tr>
-							<tr>
-								<td>DATE, XX, 2017</td>
-								<td><span>Venue</span></td>
-								<td>Location, ST</td>
-								<td><a href="#">Buy Tickets</a></td>
-							</tr>
-							<tr>
-								<td>DATE, XX, 2017</td>
-								<td><span>Venue</span></td>
-								<td>Location, ST</td>
-								<td><a href="#">Buy Tickets</a></td>
-							</tr>
-						</table>
-						<div class="red more-dates">
-							<span>* more tour dates </span>
-							<div>to be annouced soon!</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="merch-bg bg" style="background-image: url({{theme.path}}/static/img/merch-bg.jpg)">
-				<div class="row">
-					<div class="small-12 column text-center">
-						<div class="full-height">
-							<a target="_blank" title="Shop Merch" href="https://shop.theproera.com/">View the merch</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!-- /content-wrapper -->
+                            <li>
+                                <a target="_blank" href="https://joeybadass.lnk.to/AABA/amazonmp3">Amazon</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://joeybadass.lnk.to/AABA/spotify">Spotify</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="small-12 medium-10 large-8 small-centered column text-center">
+                        <div class="row small-up-1 medium-up-2 image-grid">
+                            {% for item in post.get_field('music_posts') %}
+                              <div class="column">
+
+                                  <article class="article-item post-type-{{item.post_type}}" id="post-{{item.ID}}">
+                                    <section class="article-content">
+                                      <a href="{{item.link}}" class="article-link def-link pixellate-trigger"></a>
+                                      <div class="image-pixelate">
+                                        <img src="{{item.thumbnail.src('large') }}" alt="" class="article-thumbnail">
+                                      </div>
+                                      <h2 class="article-h1">View</h2>
+                                    </section>
+                                  </article>
+                                  <a href="{{item.link}}">
+                                    <h6 style="margin: 15px 0;">{{ item.title }}</h2>
+                                  </a>
+                              </div>
+                            {% endfor %}
+                        </div>
+                        <a href="./music">View More Music</a>
+                    </div>
+                </div>
+            </div>
+            <div class="tour-section">
+                <div class="row">
+                    <div class="small-12 medium-11 large-8 small-centered column">
+                        <h2 class="text-center">JOEY BADA$$ TOUR</h2>
+                        <table class="tourdates">
+                            <tbody>
+                                <tr>
+                                    <td>4/20/17</td>
+                                    <td>
+                                        <span>Observatory</span>
+                                    </td>
+                                    <td>Santa Ana, CA, US</td>
+                                    <td>
+                                        <a href="http://www.ticketweb.com/t3/sale/SaleEventDetail?eventId=7275735&amp;pl=observatory&amp;dispatch=loadSelectionData&amp;REFID=obs">Buy Tickets</a>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>5/5/17 - 5/7/17</td>
+                                    <td>
+                                        <span>Rolling Loud</span>
+                                    </td>
+                                    <td>Miami, FL, US</td>
+                                    <td>
+                                        <a href="http://www.ticketweb.com/">Buy Tickets</a>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>8/6/17</td>
+                                    <td>
+                                        <span>Lollapalooza</span>
+                                    </td>
+                                    <td>Chicago, IL, US</td>
+                                    <td>
+                                        <a href="http://www.ticketweb.com/">Buy Tickets</a>
+                                    </td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="red more-dates text-center" style="margin-bottom: 100px;">
+                            <span>* more tour dates
+                            </span>
+                            <div>to be annouced soon!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="merch-section">
+                <div class="row">
+                    <div class="small-12 column text-center">
+                        <div class="full-height" style="display: none;">
+                            <!-- <a target="_blank" title="Shop Merch" href="https://shop.theproera.com/">View the merch</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row grey-color">
+                  <div class="small-12 column text-center">
+                    {% include 'social-links.twig' %}
+                  </div>
+                </div>
+                <div class="row grey-color">
+                  <div class="small-12 column text-center">
+                    <h6>Listen to the album:</h6>
+                      <ul class="menu simple" style="margin-bottom: 50px;">
+                          <li>
+                              <a target="_blank" href="https://itunes.apple.com/us/album/all-amerikkkan-bada%24%24/id1210537350?uo=4&app=itunes&at=1001ltdd&ct=LFV_4423c535e02ecb678824817b7c8ed8a0">iTunes</a>
+                          </li>
+                          <li>
+                              <a target="_blank" href="https://itunes.apple.com/us/album/all-amerikkkan-bada%24%24/id1210537350?uo=4&&app=music&at=1001ltdd&ct=LFV_4423c535e02ecb678824817b7c8ed8a0">Apple Music</a>
+                          </li>
+                          <li>
+                              <a target="_blank" href="https://play.google.com/store/music/album?id=Bnm24npa57x67y2nbyuy4djytwm&tid=song-T333rxm54pz66y26kus5grbiere&PCamRefID=LFV_4423c535e02ecb678824817b7c8ed8a0">Google Play</a>
+                          </li>
+
+                          <li>
+                              <a target="_blank" href="http://amazon.com/All-Amerikkkan-Bada-Explicit/dp/B06XN5N339?tag=linkfire03-20&ie=UTF8&linkCode=as2&ascsubtag=4423c535e02ecb678824817b7c8ed8a0">Amazon</a>
+                          </li>
+                          <li>
+                              <a target="_blank" href="https://open.spotify.com/user/joeybadassofficial/playlist/3DW6Y58zVOY4K36zjrVyg3">Spotify</a>
+                          </li>
+
+                      </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /content-wrapper -->
 {% endblock %}
