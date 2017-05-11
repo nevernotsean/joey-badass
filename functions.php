@@ -19,6 +19,7 @@ class StarterSite extends TimberSite {
 	function __construct() {
 		add_theme_support( 'post-formats' );
 		add_theme_support( 'post-thumbnails' );
+		add_image_size('archiveImageCropped', 800, 400, true);
 		add_theme_support( 'menus' );
 		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
@@ -49,9 +50,9 @@ class StarterSite extends TimberSite {
 		// designer overrides
 		wp_enqueue_style( 'robs', get_template_directory_uri() . '/static/css/robs.css');
 
-		add_filter('timber_compile_result', function($output) {
-			return str_replace('http://www.joeybadass.com', 'https://www.joeybadass.com', $output);
-		});
+		// add_filter('timber_compile_result', function($output) {
+		// 	return str_replace('http://www.joeybadass.com', 'https://www.joeybadass.com', $output);
+		// });
 	}
 
 	function register_post_types() {
