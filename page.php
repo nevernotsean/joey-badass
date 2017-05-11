@@ -24,4 +24,7 @@
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+$page = get_page_by_path('tour');
+$tourpage = Timber::get_post($page);
+$context['tourpage'] = $tourpage;
 Timber::render( array( 'page-' . $post->post_name . '.twig', 'page.twig' ), $context );

@@ -85,48 +85,24 @@
                 <div class="row">
                     <div class="small-12 medium-11 large-8 small-centered column">
                         <h2 class="text-center">JOEY BADA$$ TOUR</h2>
-                        <table class="tourdates">
-                            <tbody>
-                                <tr>
-                                    <td>4/20/17</td>
-                                    <td>
-                                        <span>Observatory</span>
-                                    </td>
-                                    <td>Santa Ana, CA, US</td>
-                                    <td>
-                                        <a href="http://www.ticketweb.com/t3/sale/SaleEventDetail?eventId=7275735&amp;pl=observatory&amp;dispatch=loadSelectionData&amp;REFID=obs">Buy Tickets</a>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>5/5/17 - 5/7/17</td>
-                                    <td>
-                                        <span>Rolling Loud</span>
-                                    </td>
-                                    <td>Miami, FL, US</td>
-                                    <td>
-                                        <a href="http://www.ticketweb.com/">Buy Tickets</a>
-                                    </td>
-
-                                </tr>
-                                <tr>
-                                    <td>8/6/17</td>
-                                    <td>
-                                        <span>Lollapalooza</span>
-                                    </td>
-                                    <td>Chicago, IL, US</td>
-                                    <td>
-                                        <a href="http://www.ticketweb.com/">Buy Tickets</a>
-                                    </td>
-
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="red more-dates text-center" style="margin-bottom: 100px;">
-                            <span>* more tour dates
-                            </span>
-                            <div>to be annouced soon!</div>
-                        </div>
+                				<table class="tourdates">
+                					{% for row in tourpage.get_field('tour_row') %}
+                					<tr>
+                						<td>{{row.date}}</td>
+                						<td><span>{{row.venue}}</span></td>
+                						<td>{{row.city_state}}</td>
+                						{% if row.disable %}
+                							<td><a href="#" class="disable">Buy Tickets</a></td>
+                						{% else %}
+                							<td><a href="{{row.buy_url}}">Buy Tickets</a></td>
+                						{% endif %}
+                					</tr>
+                					{% endfor %}
+                				</table>
+                				<div class="red more-dates">
+                					<span>* more tour dates </span>
+                					<div>to be annouced soon!</div>
+                				</div>
                     </div>
                 </div>
             </div>
