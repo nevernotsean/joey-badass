@@ -86,7 +86,7 @@
                     <div class="small-12 medium-11 large-8 small-centered column">
                         <h2 class="text-center">JOEY BADA$$ TOUR</h2>
                 				<table class="tourdates">
-                					{% for row in tourpage.get_field('tour_row') %}
+                					{% for row in tourpage.get_field('tour_row')|slice(0, 8) %}
                 					<tr>
                 						<td>{{row.date}}</td>
                 						<td><span>{{row.venue}}</span></td>
