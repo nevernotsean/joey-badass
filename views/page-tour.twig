@@ -14,6 +14,11 @@
 			<div class="small-12 medium-12 large-8 small-centered column text-center">
 				<h1 class="archive-title">JOEY BADA$$ TOUR</h1>
 				<table class="tourdates">
+					<tr>
+							<td colspan="5" style="background-color: #333; text-align: center;">
+								<h6 style="color: #fff;">EVERYBODY’S TOUR</h6>
+							</td>
+					</tr>
 					{% for row in post.get_field('tour_row') %}
 					<tr>
 						<td>{{row.date}}</td>
@@ -24,6 +29,11 @@
 						{% else %}
 							<td><a href="{{row.buy_url}}">Buy Tickets</a></td>
 						{% endif %}
+						<td>
+							{% if row.vip %}
+								<a href="http://bit.ly/joeyvip">VIP</a>
+							{% endif %}
+						</td>
 					</tr>
 					{% endfor %}
 				</table>

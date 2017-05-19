@@ -86,6 +86,11 @@
                     <div class="small-12 medium-11 large-8 small-centered column">
                         <h2 class="text-center">JOEY BADA$$ TOUR</h2>
                 				<table class="tourdates">
+                          <tr>
+                              <td colspan="5" style="background-color: #333; text-align: center;">
+                                <h6 style="color: #fff;">EVERYBODY’S TOUR</h6>
+                              </td>
+                          </tr>
                 					{% for row in tourpage.get_field('tour_row')|slice(0, 8) %}
                 					<tr>
                 						<td>{{row.date}}</td>
@@ -96,6 +101,11 @@
                 						{% else %}
                 							<td><a href="{{row.buy_url}}">Buy Tickets</a></td>
                 						{% endif %}
+                            <td>
+                              {% if row.vip %}
+                                <a href="http://bit.ly/joeyvip">VIP</a>
+                              {% endif %}
+                            </td>
                 					</tr>
                 					{% endfor %}
                 				</table>
