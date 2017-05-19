@@ -103,7 +103,11 @@
                 						{% endif %}
                             <td>
                               {% if row.vip %}
-                                <a href="http://bit.ly/joeyvip">VIP</a>
+                                {% if row.vipURL %}
+                                  <a href="{{row.vipURL}}">VIP</a>
+                                {% else %}
+                                  <a href="http://bit.ly/joeyvip">VIP</a>
+                                {% endif %}
                               {% endif %}
                             </td>
                 					</tr>
