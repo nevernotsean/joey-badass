@@ -25,16 +25,20 @@
 						<td><span>{{row.venue}}</span></td>
 						<td>{{row.city_state}}</td>
 						{% if row.disable %}
-							<td><a href="#" class="disable">Buy Tickets</a></td>
+							<td><a href="#" class="disable" style="text-decoration: line-through;pointer-events: none;">Buy Tickets</a></td>
 						{% else %}
 							<td><a href="{{row.buy_url}}">Buy Tickets</a></td>
 						{% endif %}
 						<td>
-							{% if row.vip %}
-								{% if row.vip_url %}
-									<a href="{{row.vip_url}}">VIP</a>
-								{% else %}
-									<a href="http://bit.ly/joeyvip">VIP</a>
+							{% if row.disable %}
+								Sold Out
+							{% else %}
+								{% if row.vip %}
+									{% if row.vip_url %}
+										<a href="{{row.vip_url}}">VIP</a>
+									{% else %}
+										<a href="http://bit.ly/joeyvip">VIP</a>
+									{% endif %}
 								{% endif %}
 							{% endif %}
 						</td>
