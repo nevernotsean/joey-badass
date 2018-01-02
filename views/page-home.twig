@@ -84,42 +84,46 @@
                 <div class="row">
                     <div class="small-12 medium-11 small-centered column">
                         <h2 class="text-center">JOEY BADA$$ TOUR</h2>
-                				<table class="tourdates">
-                          <tr>
+                		<table class="tourdates">
+                            <tr style="display: none;">
                               <td colspan="5" style="background-color: #333; text-align: center;">
                                 <h6 style="color: #fff;">EVERYBODY’S TOUR</h6>
                               </td>
-                          </tr>
-                					{% for row in tourpage.get_field('tour_row')|slice(0, 8) %}
-                					<tr>
-                						<td>{{row.date}}</td>
-                						<td><span>{{row.venue}}</span></td>
-                						<td>{{row.city_state}}</td>
-                						{% if row.disable %}
-                							<td><a href="#" class="disable" style="text-decoration: line-through;pointer-events: none;">Buy Tickets</a></td>
-                						{% else %}
-                							<td><a href="{{row.buy_url}}">Buy Tickets</a></td>
-                						{% endif %}
-                            <td>
-                              {% if row.disable %}
-                								Sold Out
-                							{% else %}
-                								{% if row.vip %}
-                									{% if row.vip_url %}
-                										<a href="{{row.vip_url}}">VIP</a>
-                									{% else %}
-                										<a href="http://bit.ly/joeyvip">VIP</a>
-                									{% endif %}
-                								{% endif %}
-                							{% endif %}
-                            </td>
-                					</tr>
-                					{% endfor %}
-                				</table>
-                				<div class="red more-dates">
-                					<span>* more tour dates </span>
-                					<div>to be annouced soon!</div>
-                				</div>
+                            </tr>
+                			{% for row in tourpage.get_field('tour_row') %}
+                            {% set hide = '' %}
+                            {% if row.date_hide < now|date('Ymd') %}
+                              {% set hide = 'display: none;' %}
+                            {% endif %}
+                            <tr date="{{row.date_hide}}" date-now="{{ now|date('Ymd') }}" style="{{ hide }}">
+                  						<td>{{row.date}}</td>
+                  						<td><span>{{row.venue}}</span></td>
+                  						<td>{{row.city_state}}</td>
+                  						{% if row.disable %}
+                  							<td><a href="#" class="disable" style="text-decoration: line-through;pointer-events: none;">Buy Tickets</a></td>
+                  						{% else %}
+                  							<td><a href="{{row.buy_url}}">Buy Tickets</a></td>
+                  						{% endif %}
+                                <td>
+                                {% if row.disable %}
+                  								SOLD OUT
+                  							{% else %}
+                  								{% if row.vip %}
+                  									{% if row.vip_url %}
+                  										<a href="{{row.vip_url}}">VIP</a>
+                  									{% else %}
+                  										<a href="http://bit.ly/joeyvip">VIP</a>
+                  									{% endif %}
+                  								{% endif %}
+                  							{% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </table>
+                        <div class="red more-dates">
+                            <span>* more tour dates </span>
+                            <div>to be annouced soon!</div>
+                        </div>
                     </div>
                 </div>
             </div>

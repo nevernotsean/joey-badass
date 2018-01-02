@@ -20,29 +20,34 @@
 							</td>
 					</tr>
 					{% for row in post.get_field('tour_row') %}
-					<tr>
-						<td>{{row.date}}</td>
-						<td><span>{{row.venue}}</span></td>
-						<td>{{row.city_state}}</td>
-						{% if row.disable %}
-							<td><a href="#" class="disable" style="text-decoration: line-through;pointer-events: none;">Buy Tickets</a></td>
-						{% else %}
-							<td><a href="{{row.buy_url}}">Buy Tickets</a></td>
+
+						{% set hide = '' %}
+						{% if row.date_hide < now|date('Ymd') %}
+							{% set hide = 'display: none;' %}
 						{% endif %}
-						<td>
+						<tr date="{{row.date_hide}}" date-now="{{ now|date('Ymd') }}" style="{{ hide }}">
+							<td>{{row.date}}</td>
+							<td><span>{{row.venue}}</span></td>
+							<td>{{row.city_state}}</td>
 							{% if row.disable %}
-								Sold Out
+								<td><a href="#" class="disable" style="text-decoration: line-through;pointer-events: none;">Buy Tickets</a></td>
 							{% else %}
-								{% if row.vip %}
-									{% if row.vip_url %}
-										<a href="{{row.vip_url}}">VIP</a>
-									{% else %}
-										<a href="http://bit.ly/joeyvip">VIP</a>
+								<td><a href="{{row.buy_url}}">Buy Tickets</a></td>
+							{% endif %}
+							<td>
+								{% if row.disable %}
+									SOLD OUT
+								{% else %}
+									{% if row.vip %}
+										{% if row.vip_url %}
+											<a href="{{row.vip_url}}">VIP</a>
+										{% else %}
+											<a href="http://bit.ly/joeyvip">VIP</a>
+										{% endif %}
 									{% endif %}
 								{% endif %}
-							{% endif %}
-						</td>
-					</tr>
+							</td>
+						</tr>
 					{% endfor %}
 				</table>
 				<div class="red more-dates">
