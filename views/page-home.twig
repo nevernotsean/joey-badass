@@ -4,7 +4,7 @@
     <div class="hero">
         <div class="bg hero-bg" rel="fullscreen">
             <video playsinline="" autoplay="" loop="" width="600" height="337.5" preload="metadata">
-                <source type="video/mp4" src="https://player.vimeo.com/external/211015222.hd.mp4?s=06f330a7dcf6755400b63de0a9abb9a26b7bf33b&profile_id=174">
+                <source type="video/mp4" src="https://player.vimeo.com/external/230472932.hd.mp4?s=b2ebd63e934b2082bceabd0b94d42d8963e4f318&profile_id=174">
             </video>
         </div>
         <div class="hero-content">
@@ -15,7 +15,7 @@
         </div>
         <div class="lower">
             <div class="video-ui">
-                <a href="./video/land-of-the-free/">Watch Full Video</a>
+                <a href="./video/temptation/">Watch Full Video</a>
                 <a href="#" class="mute def-link hide-for-small-only">
                     <i class="fa fa-volume-up"></i>
                 </a>
@@ -84,13 +84,13 @@
                 <div class="row">
                     <div class="small-12 medium-11 small-centered column">
                         <h2 class="text-center">JOEY BADA$$ TOUR</h2>
-                		<table class="tourdates">
-                            <tr style="display: none;">
+                				<table class="tourdates">
+                          <tr style="display: none;">
                               <td colspan="5" style="background-color: #333; text-align: center;">
                                 <h6 style="color: #fff;">EVERYBODY’S TOUR</h6>
                               </td>
-                            </tr>
-                			{% for row in tourpage.get_field('tour_row') %}
+                          </tr>
+                					{% for row in tourpage.get_field('tour_row') %}
                             {% set hide = '' %}
                             {% if row.date_hide < now|date('Ymd') %}
                               {% set hide = 'display: none;' %}
@@ -104,7 +104,7 @@
                   						{% else %}
                   							<td><a href="{{row.buy_url}}">Buy Tickets</a></td>
                   						{% endif %}
-                                <td>
+                              <td>
                                 {% if row.disable %}
                   								SOLD OUT
                   							{% else %}
@@ -116,14 +116,14 @@
                   									{% endif %}
                   								{% endif %}
                   							{% endif %}
-                                </td>
-                            </tr>
-                            {% endfor %}
-                        </table>
-                        <div class="red more-dates">
-                            <span>* more tour dates </span>
-                            <div>to be annouced soon!</div>
-                        </div>
+                              </td>
+                  					</tr>
+                					{% endfor %}
+                				</table>
+                				<div class="red more-dates">
+                					<span>* more tour dates </span>
+                					<div>to be annouced soon!</div>
+                				</div>
                     </div>
                 </div>
             </div>
